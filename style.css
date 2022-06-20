@@ -81,6 +81,18 @@ ul {
 .link {
     padding: 32px 0;
     display: block;
+    position: relative;
+}
+
+.link.active-link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--button-color) ;
+    border-radius: 2px;
+    left: 0%;
+    bottom: 0px;
 }
 
 .page-link,
@@ -271,7 +283,37 @@ ul {
     margin-right: 30px;
 }
 
+.about-work {
+    position: relative;
+}
 
+.about-work:after {
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    content: "";
+    width: 100%;
+    height: 70px;
+    background: rgba(47, 48, 58, 0.8);
+}
+
+.about-text {
+    display: block;
+    position: absolute;
+    bottom: 27px;
+    left: 50%;
+    transform: translate(-50%);
+    height: 16px;
+    font-size: 14px;
+    line-height: 1.43;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--animation-color);
+    text-transform: uppercase;
+    z-index: 1;
+    white-space: nowrap
+}
 
 /* Team */
 
@@ -567,6 +609,31 @@ ul {
     border: 1px solid #EEEEEE;
 }
 
+.filters-img:hover .filters__top-text {
+transform: translateY(0);
+}
+
+.filters-photo {
+    position: relative;
+    overflow: hidden;
+    width: 370px;
+    height: 294px;
+}
+
+.filters__top-text {
+    position: absolute;
+    top: 0%;
+    color: var(--animation-color);
+    background-color: rgba(33, 150, 243, 0.9);
+    font-size: 18px;
+    line-height: 1.6em;
+    letter-spacing: 0.03em;
+    height: 100%;
+    padding: 40px;
+    transform: translateY(100%);
+    transition: transform 300ms linear;
+}
+
 .filters-img:hover,
 .filters-img:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
@@ -595,4 +662,45 @@ ul {
     font-size: 16px;
     line-height: 1.88em;
     letter-spacing: 0.03em;
+}
+
+
+.backdrop {
+    width: 100%;
+    height: 1000%;
+    background: rgba(0, 0, 0, 0.2);
+    position: fixed ;
+    top: 0%;
+    transition: opacity 300ms, visibility 300ms;
+}
+
+.backdrop .is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+.modal {
+    width: 528px;
+    min-height: 581px;
+    background-color: var(--animation-color) ;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    position: absolute;
+    left: 536px;
+    top: 221px;
+    transition: transform 250ms ;
+}
+
+.modal-close-btn {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background-color: transparent ;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }

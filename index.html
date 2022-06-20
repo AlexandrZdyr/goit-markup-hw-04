@@ -23,7 +23,7 @@
                 <div class="header-container">
                     <a href="index.html" class="logo">Web<span class="logo-head">Studio</span></a>
                     <ul class="page-link">
-                        <li class="page-item"><a href="index.html" class="link current">Студия</a></li>
+                        <li class="page-item"><a href="index.html" class="link active-link current">Студия</a></li>
                         <li class="page-item"><a href="portfolio.html" class="link">Портфолио</a></li>
                         <li class="page-item"><a href="index.html" class="link">Контакты</a></li>
                     </ul>
@@ -49,7 +49,7 @@
         <section class="tittle">
             <div class="container">
                 <h1 class="tittle-h">Эффективные решения для вашего бизнеса</h1>
-                <button type="button" class="tittle-botton">Заказать услугу</button>
+                <button type="button" class="tittle-botton" data-modal-open>Заказать услугу</button>
             </div>
         </section>
 
@@ -107,9 +107,24 @@
             <div class="container">
                 <h2 class="about-we">Чем мы занимаемся</h2>
                 <ul class="about-img">
-                    <li class="about-photo"><img src="./image/box-1.jpg" alt="печатает" width="370" height="294"></li>
-                    <li class="about-photo"><img src="./image/box-2.jpg" alt="смотрит" width="370" height="294"></li>
-                    <li class="about-photos"><img src="./image/box-3.jpg" alt="рисует" width="370" height="294"></li>
+                    <li class="about-photo">
+                        <div class="about-work">
+                            <img src="./image/box-1.jpg" alt="печатает" width="370" height="294">
+                            <h3 class="about-text">Десктопные приложения</h3>
+                        </div>
+                    </li>
+                    <li class="about-photo">
+                        <div class="about-work">
+                            <img src="./image/box-2.jpg" alt="смотрит" width="370" height="294">
+                            <h3 class="about-text">Мобильные приложения</h3>
+                        </div>
+                    </li>
+                    <li class="about-photos">
+                        <div class="about-work">
+                            <img src="./image/box-3.jpg" alt="рисует" width="370" height="294">
+                            <h3 class="about-text">Дизайнерские решения</h3>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -295,6 +310,14 @@
 
 
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button type="button" class="modal-close-btn" data-modal-close><svg class="social-icon" width="11px" height="11px">
+                <use href="./image/symbol-defs.svg#icon-close"></use>
+            </svg></button>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
